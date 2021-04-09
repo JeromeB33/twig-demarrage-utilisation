@@ -3,13 +3,12 @@
 {% block content %}
     <h1>Products</h1>
 
-    {% for product in products|slice(0 , 3) %}
-        {{ product }}, 
-    {% endfor %}
-<br>
-    {% for product in products|slice(3 , 3) %}
-        {{ product }},
-    {% endfor %}
+{% for product in products  %}
+    {{product}},
+    {% if (loop.index %3) == 0 %} 
+    <br>
+
+    {% endif %}
 
 
 {{ dump(products) }}
